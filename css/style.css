@@ -24,6 +24,8 @@
   --basic-lighten-green: #5FBB2D;
   --basic-darken-green: #518534;
   --basic-lime: #8ED78F;
+  --basic-lighten-lime: #63A63E;
+  --basic-lime-hover: #367315;
   --basic-yellow: #FFD180;
   --basic-yellow-opacity: rgb(255, 209, 128, 0.5); 
   --basic-yellow-lighten: #FFBF47;
@@ -295,6 +297,49 @@ img {
   text-align: center;
   text-transform: uppercase;
 }
+
+.popular-item-hover button {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.buy {
+  color: var(--basic-white);
+  background-color: var(--basic-green);
+  border: none;
+  border-radius: 2px;
+  box-shadow: inset 0px -3px 0px var(--basic-lime-hover);
+}
+
+.buy:hover,
+.buy:focus {
+  background-color: var(--basic-lighten-green);
+}
+
+.buy:active {
+  background-color: var(--basic-darken-green);
+}
+
+.bookmarks {
+  color: var(--basic-dark);
+  background-color: var(--basic-white);
+  border-radius: 2px;
+  border: 1px solid var(--basic-lighten-lime);
+}
+
+.bookmarks:hover,
+.bookmarks:focus {
+  border-color: var(--basic-dark);
+}
+
+.bookmarks:active {
+  opacity: 0.5;
+}
+
+
 
 /* popular-manufacturers */
 
