@@ -4,12 +4,15 @@
   --basic-light: #F1F5F7;
   --basic-light-opacity: rgb(241, 245, 247, 0.5);
   --basic-white-border: #EAEAEA;
+  --basic-border-white: #E5E5E5;
   --basic-extra-light: rgba(0, 0, 0, 0.0001);
   --basic-lighten-dark: #161D29;
   --basic-lighten-black: #1D2739;
   --basic-beige: #F9F5F0;
   --basic-lighten-beige: #F3F7F9;
+  --basic-beige-caption: #F2F6F8;
   --basic-white-opacity: rgba(255, 255, 255, 0.3);
+  --basic-black-opacity: rgba(0, 0, 0, 0.3);
   --basic-red: #EE3643;
   --basic-darken-red: #CA2C37;
   --basic-heavy-red: #BA2732;
@@ -65,8 +68,13 @@ img {
 
 .markers,
 .basket,
+.basket-full,
 .ordering {
   color: var(--basic-white);
+}
+
+.basket-full {
+  background-color:  var(--basic-red);
 }
 
 .ordering {
@@ -117,8 +125,17 @@ img {
   color: var(--basic-dark);
 }
 
+.my-orders,
+.personal-area {
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--basic-dark);
+}
+
 .log-in,
-.registration {
+.registration,
+.username {
   font-size: 21px;
   line-height: 21px;
   color: var(--basic-black);
@@ -128,12 +145,19 @@ img {
 .log-in:hover,
 .log-in:focus,
 .registration:hover,
-.registration:focus {
+.registration:focus,
+.my-orders:hover,
+.my-orders:focus,
+.personal-area:hover,
+.personal-area:focus {
   color: var(--basic-red);
 }
 
 .log-in:active,
-.registration:active {
+.registration:active,
+.username:active,
+.my-orders:active,
+.personal-area:active {
   color: var(--basic-greylight);
 }
 
@@ -214,6 +238,63 @@ img {
   background-color: var(--basic-grey-opacity);
 }
 
+/* breadcrumps */
+
+.breadcrumps {
+  list-style: none;
+}
+
+.breadcrumps-item,
+.breadcrumps-item a {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "PT Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.heading-product {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-dark);
+  background-color: var(--basic-beige-caption);
+}
+
+/* sorting */
+
+.sorting-caption,
+.sorting-list-links a {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.sorting-caption {
+  color: var(--basic-black);
+}
+
+.sorting-list-links a {
+  color: var(--basic-black-opacity);
+  text-decoration-line: underline;
+  text-decoration-color: var(--basic-red);
+  text-decoration-style: dotted;
+}
+
+.sorting-list-links a:hover,
+.sorting-list-links a:focus {
+  color: var(--basic-black);
+  text-decoration-line: underline;
+  text-decoration-color: var(--basic-red);
+  text-decoration-style: solid;
+}
+
+.sorting-list-links .sorting-parameter-price,
+.sorting-list-links a:active {
+  color: var(--basic-red);
+  text-decoration: none;
+}
+
 /* slider */
 
 .slider h3 {
@@ -246,7 +327,7 @@ img {
   background-color: var(--basic-heavy-red);
 }
 
-/* popular-products */
+/* popular-products, product-list */
 
 .popular-products h2 {
   font-size: 30px;
@@ -256,21 +337,27 @@ img {
   background-color: var(--basic-beige);
 }
 
-.popular-list {
+.popular-list,
+.product-list,
+.pagination-list {
   list-style: none;
 }
 
-.popular-list-item {
+.popular-list-item,
+.product-list-item {
   background: var(--basic-white);
   border: 1px solid var(--basic-white-border);
 }
 
 .popular-list-item:hover,
-.popular-list-item:focus {
+.popular-list-item:focus,
+.product-list-item:hover,
+.product-list-item:focus {
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
 }
 
-.name-popular-product {
+.name-popular-product,
+.product-name {
   font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -339,7 +426,52 @@ img {
   opacity: 0.5;
 }
 
+.pagination-list-item a {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  align-items: center;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+  border: 1px solid var(--basic-border-white);
+  border-radius: 2px;
+}
 
+.pagination-list-item a:hover,
+.pagination-list-item a:focus {
+  border: 1px solid var(--basic-greylight);
+}
+
+.pagination-list-item a:active {
+  border: 1px solid var(--basic-red);
+  color: var(--basic-black);
+}
+
+.pagination-list-item:first-of-type a {
+  color: var(--basic-white);
+  background-color: var(--basic-red);
+  border: 1px solid var(--basic-red);
+}
+
+/* about-tools */
+
+.about-tools {
+  background-color: var(--basic-light);
+}
+
+.about-tools-caption {
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.about-tools-text {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  color: var(--basic-black);
+}
 
 /* popular-manufacturers */
 
