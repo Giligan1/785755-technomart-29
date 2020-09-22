@@ -26,10 +26,14 @@
       </div>
       <div class="header-middle-wrapper">
         <p class="description-paragraph"><i>Интернет-магазин <br> строительных материалов <br> и инструментов для ремонта</i></p>
-        <a href="tel:+78125550555" class="phone-number"> +7 (812) 555-05-55 </a>
-        <p class="location">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-        <a href="#" class="log-in">Войти</a>
-        <a href="#" class="registration">Регистрация</a>
+        <div class="contact-box">
+          <a href="tel:+78125550555" class="phone-number"> +7 (812) 555-05-55 </a>
+          <p class="location">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+        </div>
+        <div class="login-box">
+          <a href="#" class="log-in">Войти</a>
+          <a href="#" class="registration">Регистрация</a>
+        </div>
       </div>
       <div class="header-bottom-wrapper">
         <nav class="site-navigation">
@@ -66,29 +70,27 @@
 
       <section class="promo">
         <h2 class="visually-hidden">Ассортимент</h2>
-        <ul class="assortment-list">
-          <li class="assortment-list-item">
-            <h3>Материалы</h3>
-            <a href="#">На любой вкус</a>
-            <span class="visually-hidden">Новинка</span>
-          </li>
-          <li class="assortment-list-item">
-            <h3>Инструмент</h3>
-            <a href="#">На все случаи</a>
-          </li>
-          <li class="assortment-list-item">
-            <h3>Техника</h3>
-            <a href="#">Для стройки</a>
-          </li>
-          <li class="assortment-list-item">
-            <h3>Скидки 50%</h3>
-            <a href="#">на 350 товаров</a>
-          </li>
-          <li class="assortment-list-item">
-            <h3>Доставка</h3>
-            <a href="#">Бесплатно</a>
-          </li>
-        </ul>
+        <div class="assortment-item">
+          <h3>Материалы</h3>
+          <a href="#">На любой вкус</a>
+          <span class="visually-hidden">Новинка</span>
+        </div>
+        <div class="assortment-item">
+          <h3>Инструмент</h3>
+          <a href="#">На все случаи</a>
+        </div>
+        <div class="assortment-item">
+          <h3>Техника</h3>
+          <a href="#">Для стройки</a>
+        </div>
+        <div class="assortment-item">
+          <h3>Скидки 50%</h3>
+          <a href="#">на 350 товаров</a>
+        </div>
+        <div class="assortment-item">
+          <h3>Доставка</h3>
+          <a href="#">Бесплатно</a>
+        </div>
         <div class="slider">
           <h3>Перфораторы</h3>
           <img src="img/promo-slider-first.jpg" width="620" height="266" alt="Рекламная картинка">
@@ -185,8 +187,10 @@
       </section>
 
       <section class="services">
-        <h2>Сервисы</h2>
-        <p class="service-text">Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
+        <div class="service-box">
+          <h2>Сервисы</h2>
+          <p class="service-text">Хороший интернет-магазин отличается от плохого не только ценами! <br> Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
+        </div>
         <ul class="services-list">
           <li class="services-list-item">
             <button class="service-button" type="button" value="Доставка">Доставка</button>
@@ -212,33 +216,35 @@
         </div>
       </section>
 
-      
-      <section class="about-company-division">
-        <h2>Компания «Техномарт»</h2>
-        <p class="about-company-text">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
-        <p class="about-company-text">Мы можем доставить ваш товар в самые отдаленные точки России! <br> Техномарт работает со многими транспортными компаниями:</p>
-        <ul class="companies-list">
-          <li class="companies-list-item">
-            <p>Деловые линии</p>
-          </li>
-          <li class="companies-list-item">
-            <p>Автотрейдинг</p>
-          </li>
-          <li class="companies-list-item">
-            <p>ЖелДорЭкспедиция</p>
-          </li>
-        </ul>
-        <a href="#">Подробнее о компании</a>
-      </section>
-          
-      <section class="contacts">
-        <h2>Контакты</h2>
-        <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-        <a href="#">
-          <img src="img/map.jpg" width="300" height="158" alt="Навигационной карты">
-        </a>
-        <a href="#" class="link-style">Заблудились? Напишите нам</a>
-      </section>
+      <div class="index-columns">
+        <section class="about-company-division">
+          <h2>Компания «Техномарт»</h2>
+          <p class="about-company-text">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
+          <p class="about-company-text">Мы можем доставить ваш товар в самые отдаленные точки России! <br> Техномарт работает со многими транспортными компаниями:</p>
+          <ul class="companies-list">
+            <li class="companies-list-item">
+              <p>Деловые линии</p>
+            </li>
+            <li class="companies-list-item">
+              <p>Автотрейдинг</p>
+            </li>
+            <li class="companies-list-item">
+              <p>ЖелДорЭкспедиция</p>
+            </li>
+          </ul>
+          <a href="#" class="link-style">Подробнее о компании</a>
+        </section>
+            
+        <section class="contacts">
+          <h2>Контакты</h2>
+          <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+          <a href="#">
+            <img src="img/map.jpg" width="300" height="158" alt="Навигационной карты">
+          </a>
+          <a href="#" class="link-style">Заблудились? Напишите нам</a>
+        </section>
+      </div>
+   
     </main>
    
     <footer class="main-footer">
@@ -305,14 +311,16 @@
             </a>
           </li>
         </ul>
-        <p class="feedback-text">
-          Обратная связь: <br>
-          <a href="mail@htmlacademy.ru" class="feedback-link">mail@htmlacademy.ru</a>
-        </p>
-        <p class="feedback-text">
-          Разработано — <br> 
-          <a href="https://htmlacademy.ru/intensive/htmlcss" class="feedback-link">htmlacademy.ru</a>
-        </p>
+        <div class="feedback-box">
+          <p class="feedback-text">
+            Обратная связь: <br>
+            <a href="mail@htmlacademy.ru" class="feedback-link">mail@htmlacademy.ru</a>
+          </p>
+          <p class="feedback-text">
+            Разработано — <br> 
+            <a href="https://htmlacademy.ru/intensive/htmlcss" class="feedback-link">htmlacademy.ru</a>
+          </p>
+        </div>
       </div>
     </footer>
   
