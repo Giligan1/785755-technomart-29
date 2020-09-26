@@ -5,6 +5,7 @@
   --basic-light-opacity: rgb(241, 245, 247, 0.5);
   --basic-white-border: #EAEAEA;
   --basic-border-white: #E5E5E5;
+  --basic-logo-inset: rgba(0, 0, 0, 0.24);
   --basic-extra-light: rgba(0, 0, 0, 0.0001);
   --basic-lighten-dark: #161D29;
   --basic-lighten-black: #1D2739;
@@ -18,6 +19,7 @@
   --basic-heavy-red: #BA2732;
   --basic-dark: #32425C;
   --basic-extra-dark: #293449;
+  --basic-hover-grey: #3d546f;
   --basic-grey: rgba(255, 255, 255, 0.5);
   --basic-greylight: #C5C5C5;
   --basic-greylight-opacity: rgb(197, 197, 197, 0.3);
@@ -96,6 +98,7 @@ img {
 .header-top-wrapper {
   display: grid;
   grid-template-columns: auto 1fr auto auto auto;
+  grid-template-rows: 42px;
 }
 
 .markers,
@@ -105,11 +108,62 @@ img {
   color: var(--basic-white);
 }
 
+.markers,
+.basket {
+  position: relative;
+}
+
+.markers::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 2px;
+
+  width: 14px;
+  height: 16px;
+  background-image: url("../img/bookmark-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.basket::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 2px;
+
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.logo-site {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.logo-site img {
+  padding: 12px 57px 17px 55px;
+  background-color: var(--basic-red);
+  box-shadow: inset 0px -5px 0px var(--basic-logo-inset);
+}
+
+.logo-site img:active {
+  background-color: var(--basic-heavy-red);
+}
+
 .basket-full {
-  background-color:  var(--basic-red);
+  background-color: var(--basic-red);
 }
 
 .ordering {
+  padding: 9px 16px 9px 19px;
+  margin: 0;
+
   background-color: var(--basic-green);
 }
 
@@ -119,6 +173,11 @@ img {
 
 .ordering.active {
   background-color: var(--basic-green);
+}
+
+.markers,
+.basket {
+  padding: 9px 25px;
 }
 
 .markers:active,
@@ -143,6 +202,7 @@ img {
 .header-middle-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 158px;
   align-items: center;
 }
 
@@ -150,6 +210,7 @@ img {
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
+  padding-left: 30px;
   color: var(--basic-red);
 }
 
@@ -161,6 +222,8 @@ img {
   line-height: 30px;
   border: 3px solid #FFFFFF;
   background-color: var(--basic-lighten-beige);
+
+  padding: 7px 45px 8px 39px;
 }
 
 .location {
@@ -175,6 +238,30 @@ img {
   line-height: 18px;
   text-align: center;
   color: var(--basic-dark);
+}
+
+.log-in {
+  position: relative;
+  padding: 12px 27px 12px 45px;
+}
+
+.log-in::before {
+  content: "";
+
+  position: absolute;
+  top: 15px;
+  left: 16px;
+
+  width: 20px;
+  height: 17px;
+
+  background-image: url("../img/login-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.registration {
+  padding: 12px 24px;
 }
 
 .log-in,
@@ -209,20 +296,19 @@ img {
 
 .header-bottom-wrapper {
   display: grid;
-
-  background-color: var(--basic-dark);
+  grid-template-rows: 60px;
 }
 
 .header-bottom-wrapper .navigation-list {
-  display: grid;
-  grid-template-columns: repeat(7, auto);
+  display: flex;
+  justify-content: space-between;
 
   margin: 0;
   padding: 0;
 }
 
 .site-navigation {
-  background: var(--basic-dark);
+  background-color: var(--basic-dark);
   box-shadow: inset 0px -5px 0px var(--basic-extra-dark); 
 }
 
@@ -426,6 +512,10 @@ img {
   text-transform: uppercase;
 }
 
+.open-catalog {
+  padding: 11px 46px 9px 46px;
+}
+
 .promo-text {
   font-size: 18px;
   line-height: 24px;
@@ -508,15 +598,21 @@ img {
 .popular-list {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular-list-item:not(:last-child) {
+  margin-right: 20px;
 }
 
 .popular-list-item,
 .product-list-item {
+  width: 220px;
+
   background: var(--basic-white);
   border: 1px solid var(--basic-white-border);
+  box-sizing: border-box;
 }
 
 .popular-list-item:hover,
@@ -686,17 +782,24 @@ img {
 .list-manufacturers {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
 
   margin: 0;
   padding: 0;
 }
 
+.manufacturers-list-item:not(:nth-child(4n)) {
+  margin-right: 20px;
+}
+
 .manufacturers-list-item {
-  background: var(--basic-white);
+  width: 220px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+  background-color: var(--basic-white);
   border: 1px solid var(--basic-white-border);
 }
 
@@ -794,17 +897,29 @@ img {
 }
 
 .index-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
 }
 
-/* about-company */
+/* about-company contancts */
 
-.about-company-division h2 {
+.about-company-division {
+  width: 460px;
+}
+
+.contacts {
+  width: 300px;
+}
+
+.about-company-division h2,
+.contacts h2 {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
   color: var(--basic-black);
+
+  margin: 0;
+  margin-bottom: 24px;
 }
 
 .about-company-text {
@@ -812,9 +927,14 @@ img {
   font-size: 13px;
   line-height: 24px;
   color: var(--basic-black);
+
+  margin: 0;
 }
 
 .companies-list {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
@@ -824,20 +944,21 @@ img {
   color: var(--basic-black);
 }
 
-/* contancts */
-
-.contacts h2 {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--basic-black);
-}
-
 .contacts p {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
   color: var(--basic-black);
+  
+  margin: 0;
+}
+
+.more-info {
+  padding: 11px 40px 9px 40px;
+}
+
+.send-us {
+  padding: 11px 61px 9px 61px;
 }
 
 /* footer */
@@ -863,9 +984,15 @@ img {
   grid-template-columns: auto 1fr;
 }
 
+.footer-logo img {
+  padding: 20px 41px 45px 41px;
+  background-color: var(--basic-red);
+  box-shadow: inset 0px -5px 0px var(--basic-logo-inset);
+}
+
 .footer-navigation-list {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
+  display: flex;
+  justify-content: space-between;
   list-style: none;
 
   margin: 0;
@@ -905,8 +1032,8 @@ img {
 }
 
 .footer-products-list {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
+  display: flex;
+  justify-content: space-between;
   list-style: none;
 
   margin: 0;
@@ -947,8 +1074,11 @@ img {
 }
 
 .social-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 140px;
   list-style: none;
-
+  
   margin: 0;
   padding: 0;
 }
