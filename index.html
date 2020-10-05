@@ -15,14 +15,21 @@
       <div class="header-top-container">
         <div class="header-top-wrapper container">
           <a href="#" class="logo-site">
-            <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип  Техномарта">
+            <img class="logo-image" src="img/logo-technomart.svg" width="108" height="18" alt="Логотип  Техномарта">
           </a>
-          <form action="#" method="get">
-            <input type="search" name="search" placeholder="Поиск" aria-label="Поиск по сайту">
-            <button type="submit" class="visually-hidden"></button>
+          <form action="#" method="get" class="searching-field">
+            <div class="search-wrapper">
+              <input class="searching-input" type="search" name="search" placeholder="Поиск:" aria-label="Поиск по сайту">
+              <svg class="searching-icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.3">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z"/>
+                </g>
+              </svg>
+              <button type="submit" class="visually-hidden"></button>
+            </div>
           </form>
-          <a href="#" class="markers">Закладки:0</a>
-          <a href="#" class="basket">Корзина:0</a>
+          <a href="#" class="markers">Закладки: 0</a>
+          <a href="#" class="basket">Корзина: 0</a>
           <a href="#" class="ordering">Оформить заказ</a>
         </div>
       </div>
@@ -33,8 +40,13 @@
             <a href="tel:+78125550555" class="phone-number"> +7 (812) 555-05-55 </a>
             <p class="location">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
-          <div class="login-box">
-            <a href="#" class="log-in">Войти</a>
+          <div class="login-wrapper">
+            <a href="#" class="log-in">Войти
+              <svg class="login-icon" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.1667 8.5L5.71429 0V6H0V11H5.71429V17L14.1667 8.5Z" fill="#C5C5C5"/>
+                <path d="M16.1771 15.01H11.3895V17H16.1771C18.2514 17 19.0381 15.19 19.0619 13.974V3.028C19.0381 1.811 18.2514 0 16.1771 0H11.3895V1.99H16.1771C16.9762 1.99 17.1219 2.671 17.1391 3.047V13.951C17.1229 14.327 16.9762 15.01 16.1771 15.01Z" fill="#C5C5C5"/>
+              </svg>
+            </a>
             <a href="#" class="registration">Регистрация</a>
           </div>
         </div>
@@ -78,7 +90,7 @@
           <div class="assortment-item">
             <h3>Материалы</h3>
             <a href="#">На любой вкус</a>
-            <span class="visually-hidden">Новинка</span>
+            <span class=" novelty">New</span>
           </div>
           <div class="assortment-item">
             <h3>Инструмент</h3>
@@ -98,13 +110,17 @@
           </div>
           <div class="slider">
             <h3>Перфораторы</h3>
-            <img src="img/promo-slider-first.jpg" width="620" height="266" alt="Рекламная картинка">
+            <img src="img/promo-slider-first.jpg" class="slider-photo" width="620" height="266" alt="Рекламная картинка">
             <span class="promo-text">Настоящие мужские игрушки</span>
-            <button type="button">Назад</button>
-            <button type="button">Вперёд</button>
+            <button type="button" class="button-left">
+              <img src="img/left-icon.svg" width="22" height="40" alt="Влево">
+            </button>
+            <button type="button" class="button-right">
+              <img src="img/left-icon.svg" width="22" height="40" alt="Вправо">
+            </button>
             <a href="catalog.html" class="link-style open-catalog">Открыть каталог</a>
-            <button type="button"></button>
-            <button type="button"></button>
+            <button type="button" class="first-slider-switch"></button>
+            <button type="button" class="second-slider-switch current-switch"></button>
           </div>
         </div>
       </section>
@@ -112,36 +128,50 @@
       <section class="popular-products">
         <div class="popular-products-container container">
           <h2>Популярные товары:</h2> 
-          <a href="#" class="link-style">Все популярные товары</a>
+          <a href="#" class="link-style link-popular-product">Все популярные товары</a>
           <ul class="popular-list">
             <li class="popular-list-item">
               <img src="img/product-boshbfg-9000.jpg" width="184" height="164" alt="Фото перфоратора BOSCH BFG 9000">
               <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 9000</a>
-              <span class="old-price">32500</span>
-              <a href="#" class="price link-style">25500</a>
+              <span class="old-price">32500 Р.</span>
+              <a href="#" class="price link-style">25500 Р.</a>
+              <div class="popular-item-hover">
+                <button class="buy">Купить</button>
+                <button class="bookmarks">В закладки</button>
+              </div>
             </li>
             <li class="popular-list-item">
-              <img src="img/product-boshbfg-3000.jpg" width="184" height="164" alt="Фото перфоратора BOSCH BFG 3000">
+              <img src="img/product-boshbfg-3000.jpg" width="127" height="112" alt="Фото перфоратора BOSCH BFG 3000">
               <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 3000</a>
-              <span class="old-price">22500</span>
-              <a href="#" class="price link-style">15500</a>
-              <span class="visually-hidden">Новинка</span>
-            </li>
-            <li class="popular-list-item">
-              <img src="img/product-boshbfg-6000.jpg" width="184" height="164" alt="Фото перфоратора BOSCH BFG 6000">
-              <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 6000</a>
-              <span class="old-price">30500</span>
-              <a href="#" class="price link-style">25500</a>
-            </li>
-            <li class="popular-list-item">
-              <img src="img/product-boshbfg-2000.jpg" width="184" height="164" alt="Фото перфоратора BOSCH BFG 2000">
-              <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 2000</a>
-              <a href="#" class="price link-style">15500</a>
+              <span class="old-price">22500 Р.</span>
+              <a href="#" class="price link-style">15500 Р.</a>
               <span class="visually-hidden">Новинка</span>
               <div class="popular-item-hover">
                 <button class="buy">Купить</button>
                 <button class="bookmarks">В закладки</button>
               </div>
+              <span class=" novelty">New</span>
+            </li>
+            <li class="popular-list-item">
+              <img src="img/product-boshbfg-6000.jpg" width="144" height="128" alt="Фото перфоратора BOSCH BFG 6000">
+              <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 6000</a>
+              <span class="old-price">30500 Р.</span>
+              <a href="#" class="price link-style">25500 Р.</a>
+              <div class="popular-item-hover">
+                <button class="buy">Купить</button>
+                <button class="bookmarks">В закладки</button>
+              </div>
+            </li>
+            <li class="popular-list-item">
+              <img src="img/product-boshbfg-2000.jpg" width="127" height="112" alt="Фото перфоратора BOSCH BFG 2000">
+              <a href="#" class="name-popular-product">Перфоратор BOSCH BFG 2000</a>
+              <a href="#" class="price link-style">15500 Р.</a>
+              <span class="visually-hidden">Новинка</span>
+              <div class="popular-item-hover">
+                <button class="buy">Купить</button>
+                <button class="bookmarks">В закладки</button>
+              </div>
+              <span class=" novelty">New</span>
             </li>
           </ul>
         </div>
@@ -203,7 +233,7 @@
             <p class="service-text">Хороший интернет-магазин отличается от плохого не только ценами! <br> Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
           </div>
           <ul class="services-list">
-            <li class="services-list-item">
+            <li class="services-list-item service-item-current">
               <button class="service-button" type="button" value="Доставка">Доставка</button>
             </li>
             <li class="services-list-item">
@@ -250,7 +280,7 @@
               
           <section class="contacts">
             <h2>Контакты</h2>
-            <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+            <p>Вы можете забрать товар сами,<br> заехав в наш офис:</p>
             <a href="#" class="navigation-map">
               <img src="img/map.jpg" width="300" height="158" alt="Навигационной карты">
             </a>
@@ -316,16 +346,19 @@
           <ul class="social-list">
             <li class="social-list-item">
               <a href="#">
+                <span class="visually-hidden">Вконтакте</span>
                 <img src="img/vk-social.svg" width="26" height="15" alt="Вконтакте">
               </a>
             </li>
             <li class="social-list-item">
               <a href="#">
+                <span class="visually-hidden">Фейсбук</span>
                 <img src="img/facebook-social.svg" width="12" height="22" alt="Фейсбук">
               </a>
             </li>
             <li class="social-list-item">
               <a href="#">
+                <span class="visually-hidden">Инстаграм</span>
                 <img src="img/instagram-social.svg" width="21" height="21" alt="Инстаграм">
               </a>
             </li>
@@ -343,7 +376,45 @@
         </div>
       </div>
     </footer>
+
+    <section class="modal-send">
+      <h2 class="visually-hidden">Форма отправки сообщения</h2>
+      <form action="#" method="post" class="send-form">
+        <div class="modal-wrapper modal-container">
+          <p>
+            <label for="username">Ваше имя:</label>
+            <input type="text" name="user-name" class="modal-username" id="username" placeholder="Имя Фамилия">
+          </p>
+          <p>
+            <label for="email">Ваш e-mail:</label>
+            <input type="email" name="email" class="user-email" id="email" placeholder="email@example.com">
+          </p>
+        </div>
+        <div class="modal-container">
+          <p>
+            <label for="message">Текст письма:</label>
+            <textarea rows="5" name="message" id="message" class="user-message" placeholder="В свободной форме"></textarea>
+          </p>
+        </div>
+        <div class="modal-submit-wrapper">
+          <div class=" modal-container">
+            <button type="submit" class="modal-submit-button link-style">Отправить</button>
+          </div>
+        </div>
+      </form>
+      <button class="close-button">
+        <img src="img/close-icon.svg" width="21" height="21" alt="Закрыть">
+      </button> 
+    </section>
   
+    <section class="popup-map">
+      <h2 class="visually-hidden">Всплывающее окно карты</h2>
+      <img src="img/full-map.jpg" width="943" height="449" alt="Увеличенная фотография карты">
+      <button class="close-button">
+        <img src="img/close-icon.svg" width="21" height="21" alt="Закрыть">
+      </button>
+    </section>
+
   </body>
 
 </html>
