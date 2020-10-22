@@ -135,8 +135,10 @@
                     <div class="toggle toggle-max" tabindex="0" aria-label="Ползунок максимальной цены"></div>
                   </div>
                   <div class="price-controls">
-                    <input class="min-price" type="number" name="min-price" value="0">
-                    <input class="max-price" type="number" name="max-price" value="30000">
+                    <label for="min-price" class="visually-hidden">Минимальная цена</label>
+                    <input id="min-price" class="min-price" type="number" name="min-price" value="0">
+                    <label for="max-price" class="visually-hidden">Максимальная цена</label>
+                    <input id="max-price" class="max-price" type="number" name="max-price" value="30000">
                   </div>
                 </div>
               </fieldset>
